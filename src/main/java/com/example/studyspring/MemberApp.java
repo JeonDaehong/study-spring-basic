@@ -7,7 +7,10 @@ import com.example.studyspring.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+
         Member member = new Member(1L, "홍길동", Grade.VIP);
         memberService.join(member);
 
