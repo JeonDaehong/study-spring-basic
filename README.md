@@ -5,6 +5,7 @@
 ## 진행 중인 작업
 
 - [x] Spring을 사용하지 않고, 순수 java로만 서비스 로직 구현
+- [x] AppConfig에 @Configuration과 @Bean으로 의존성 주입
 
 ## 강의 출처
 - [스프링 강의 - 인프런 김영한 스프링 강의]
