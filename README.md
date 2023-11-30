@@ -6,6 +6,9 @@
 
 - [x] Spring을 사용하지 않고, 순수 java로만 서비스 로직 구현
 - [x] AppConfig에 @Configuration과 @Bean으로 의존성 주입
+- [x] @ComponentScan과 @Component
+- [x] @Autowired
+- [x] 스프링 빈의 라이프사이클
 
 ## 강의 출처
 - [스프링 강의 - 인프런 김영한 스프링 강의]
