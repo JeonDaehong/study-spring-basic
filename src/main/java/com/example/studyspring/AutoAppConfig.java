@@ -17,7 +17,15 @@ import org.springframework.context.annotation.FilterType;
         // 이러한 설정 정보를 넣어주는 것이다.
         // ( @Configuration 소스코드를 열어보면 @Component 어노테이션이 붙어있기 때문이다. )
         // 아래 설정 정보 : 어노테이션으로 등록된 Configuration 가 붙은 class 들은 제외시킨다.
-        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class),
+
+        // 이렇게 어느 부분만 탐색하라고 지정해줄 수 있다. 패키지 경로를 적을 수도 있고, 아래 처럼 클래스로 지정할 수도 있다.
+        // 지정을 하지 않으면, 해당 ComponentScan이 선언된 클래스의 패키지 아래는 전부 다 확인한다.
+        // 즉, 이 AutoAppConfig는 package com.example.studyspring; 으로 되어있기 때문에 저 아래 패키지의 @Component는 전부 확인한다고 보면 된다.
+        // ***** 가장 권장하는 방법은, 설정 정보 클래스를 프로젝트 최 상단에 두고, 패키지 위치를 지정하지 않는 것이다. *****
+        basePackages = {"com.example.studyspring.member", "com.example.studyspring.order"},
+        basePackageClasses = AppConfig.class
+
 )
 @Configuration
 public class AutoAppConfig {
